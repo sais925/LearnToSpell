@@ -237,4 +237,69 @@ Improvements and bug fixes are welcome via pull request.
 
 ---
 
+## Phrase Bank
+
+The 42 prompts currently in `PromptBank.ts`, with sample Spanish translations. Gemini grades leniently — the translations below are reference answers, but minor variations, regional dialects, and synonyms are accepted.
+
+### Easy (18)
+
+| English | Spanish |
+|---------|---------|
+| The cat is sleeping. | El gato está durmiendo. |
+| I am hungry. | Tengo hambre. |
+| Where is the bathroom? | ¿Dónde está el baño? |
+| Hello, how are you? | Hola, ¿cómo estás? |
+| Good morning. | Buenos días. |
+| I love pizza. | Me encanta la pizza. |
+| The dog is brown. | El perro es marrón. |
+| She is my friend. | Ella es mi amiga. |
+| I want water. | Quiero agua. |
+| What time is it? | ¿Qué hora es? |
+| Open the door. | Abre la puerta. |
+| I am tired. | Estoy cansado. |
+| Today is sunny. | Hoy hace sol. |
+| I need help. | Necesito ayuda. |
+| The car is fast. | El coche es rápido. |
+| My name is Sam. | Me llamo Sam. |
+| Thank you very much. | Muchas gracias. |
+| See you tomorrow. | Hasta mañana. |
+
+### Medium (16)
+
+| English | Spanish |
+|---------|---------|
+| She runs every morning. | Ella corre todas las mañanas. |
+| We will travel tomorrow. | Viajaremos mañana. |
+| I would like a coffee, please. | Me gustaría un café, por favor. |
+| Can you help me find the museum? | ¿Puedes ayudarme a encontrar el museo? |
+| She works at the hospital. | Ella trabaja en el hospital. |
+| We are going to the beach. | Vamos a la playa. |
+| The book is on the table. | El libro está sobre la mesa. |
+| I do not understand the question. | No entiendo la pregunta. |
+| He plays soccer every weekend. | Él juega al fútbol todos los fines de semana. |
+| My sister is a teacher. | Mi hermana es maestra. |
+| The food was delicious. | La comida estaba deliciosa. |
+| I have two brothers and one sister. | Tengo dos hermanos y una hermana. |
+| Please speak more slowly. | Por favor, habla más despacio. |
+| I need to buy some bread. | Necesito comprar pan. |
+| The train leaves at eight o'clock. | El tren sale a las ocho. |
+| My favorite color is blue. | Mi color favorito es el azul. |
+
+### Hard (8)
+
+| English | Spanish |
+|---------|---------|
+| If it rains, we stay home. | Si llueve, nos quedamos en casa. |
+| Although it was raining, we went hiking. | Aunque estaba lloviendo, fuimos de excursión. |
+| If I had known, I would have come earlier. | Si lo hubiera sabido, habría venido antes. |
+| The book that I read yesterday was fascinating. | El libro que leí ayer era fascinante. |
+| She told me that her flight had been canceled. | Me dijo que su vuelo había sido cancelado. |
+| Despite the difficulties, they completed the project. | A pesar de las dificultades, completaron el proyecto. |
+| By the time we arrived, the meeting had ended. | Cuando llegamos, la reunión había terminado. |
+| I wish I could speak more languages fluently. | Ojalá pudiera hablar más idiomas con fluidez. |
+
+> Want a different language? Change `targetLanguage` on the RoundController in the Inspector. Gemini will grade against whatever language you specify (Spanish is the default).
+
+---
+
 *Built with 👻 on Spectacles*
