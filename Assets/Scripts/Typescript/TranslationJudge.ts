@@ -26,8 +26,9 @@ const SYSTEM_INSTRUCTION =
   `Reply with ONLY a JSON object on a single line, no markdown, no code fences, no prose. ` +
   `Schema: {"correct": boolean, "reason": string}. ` +
   `If correct: keep "reason" SHORT (under 6 words), e.g. "Correct!" or "Nice!". ` +
-  `If incorrect: "reason" MUST start with "Correct: " followed by the correct translation in the target language ` +
-  `(e.g. "Correct: El gato está durmiendo"). This teaches the player the right answer.`;
+  `If incorrect: "reason" MUST start with "Try: " followed by the correct translation in the target language ` +
+  `(e.g. "Try: El gato está durmiendo"). This teaches the player the right answer without ` +
+  `using the word "Correct" which would be ambiguous in the UI.`;
 
 function buildContents(
   english: string,

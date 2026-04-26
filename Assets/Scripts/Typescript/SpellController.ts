@@ -67,6 +67,10 @@ export class SpellController extends BaseScriptComponent {
   private flightVelocity: vec3 | null = null;
   private flightStartedAt: number = 0;
   private armedAt: number = 0;
+  // True when the player was already pinching at arm-time — they must release
+  // their pinch and then pinch again before the next launch is accepted.
+  // Prevents the "instant launch" bug where a held-over pinch fires immediately.
+  private requiresPinchRelease: boolean = false;
 
   public onSpellLaunched: Event<{ position: vec3; velocity: vec3 }> = new Event();
   public onSpellDespawned: Event<void> = new Event<void>();
@@ -77,6 +81,16 @@ export class SpellController extends BaseScriptComponent {
     // Subscribe to gesture detector when script awakens
     if (this.gestureDetector) {
       this.gestureDetector.onGestureDetected.add(() => this.launchSpell());
+      // Track pinch release so we can require a release-then-pinch sequence
+      // when the player was already pinching at arm-time.
+      this.gestureDetector.onGestureLost.add(() => this.onPinchReleased());
+    }
+  }
+
+  private onPinchReleased(): void {
+    if (this.requiresPinchRelease) {
+      this.requiresPinchRelease = false;
+      this.logger.info("[ARM] Pinch released — next pinch will launch.");
     }
   }
 
@@ -100,8 +114,24 @@ export class SpellController extends BaseScriptComponent {
     this.activeSpell.getTransform().setLocalPosition(localOffset);
     this.phase = "armed";
     this.armedAt = getTime();
+
+    // If the player's hand is already pinching at arm-time, require them to
+    // release the pinch before the next pinch is accepted as a launch.
+    // This prevents the "instant launch" bug where a stale held pinch fires
+    // immediately on arm.
+    if (this.gestureDetector && this.gestureDetector.isPinching()) {
+      this.requiresPinchRelease = true;
+      this.logger.info(
+        "[ARM] Hand was already pinching — release pinch first, then re-pinch to launch."
+      );
+    } else {
+      this.requiresPinchRelease = false;
+    }
+
+    // Log the spawned spell's world position for diagnostics
+    const worldPos = this.activeSpell.getTransform().getWorldPosition();
     this.logger.info(
-      `[ARM] Spell armed at hand-local offset (R=${this.handOffsetRightCm},U=${this.handOffsetUpCm},F=${this.handOffsetForwardCm}). Pinch right hand to launch!`
+      `[ARM] Spell armed at hand-local offset (R=${this.handOffsetRightCm},U=${this.handOffsetUpCm},F=${this.handOffsetForwardCm}) world=(${worldPos.x.toFixed(1)},${worldPos.y.toFixed(1)},${worldPos.z.toFixed(1)}). Pinch right hand to launch!`
     );
   }
 
@@ -141,8 +171,15 @@ export class SpellController extends BaseScriptComponent {
       this.logger.warn("[LAUNCH] Pinch ignored — phase says armed but activeSpell is null");
       return;
     }
+    // Anti-instant-launch: if the player was already pinching when arm() ran,
+    // they must release first so a stale held pinch can't fire immediately.
+    if (this.requiresPinchRelease) {
+      this.logger.info(
+        "[LAUNCH] Pinch ignored — player was already pinching at arm-time. Release pinch first."
+      );
+      return;
+    }
     // Cooldown guard: prevent instant-launch if a pinch fires the same frame the spell arms
-    // (common cause: player's hand was already pinching when grading finished)
     const sinceArm = getTime() - this.armedAt;
     if (sinceArm < this.launchCooldownSec) {
       this.logger.info(
