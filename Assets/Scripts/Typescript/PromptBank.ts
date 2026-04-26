@@ -62,6 +62,9 @@ const PROMPTS: Prompt[] = [
 ];
 
 export class PromptBank {
+  // Tracks the last prompt returned so we can avoid back-to-back repeats
+  private static lastEnglish: string | null = null;
+
   static getAll(difficulty?: Difficulty): Prompt[] {
     if (!difficulty) return PROMPTS.slice();
     return PROMPTS.filter((p) => p.difficulty === difficulty);
@@ -69,7 +72,22 @@ export class PromptBank {
 
   static random(difficulty?: Difficulty): Prompt {
     const pool = PromptBank.getAll(difficulty);
-    const idx = Math.floor(Math.random() * pool.length);
-    return pool[idx];
+
+    // Filter out the previously returned prompt to prevent back-to-back repeats.
+    // If the pool only has 1 prompt total, we have no choice but to repeat.
+    const candidates =
+      pool.length > 1 && PromptBank.lastEnglish !== null
+        ? pool.filter((p) => p.english !== PromptBank.lastEnglish)
+        : pool;
+
+    const idx = Math.floor(Math.random() * candidates.length);
+    const chosen = candidates[idx];
+    PromptBank.lastEnglish = chosen.english;
+    return chosen;
+  }
+
+  /** Clear the back-to-back repeat guard — call on game restart if desired. */
+  static resetHistory(): void {
+    PromptBank.lastEnglish = null;
   }
 }

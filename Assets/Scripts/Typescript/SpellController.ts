@@ -57,11 +57,16 @@ export class SpellController extends BaseScriptComponent {
   @hint("Right offset from hand in local space (cm)")
   private handOffsetRightCm: number = 0;
 
+  @input
+  @hint("Min seconds between arming and accepting a pinch — prevents accidental instant-launch")
+  private launchCooldownSec: number = 0.5;
+
   private logger: Logger;
   private phase: Phase = "idle";
   private activeSpell: SceneObject | null = null;
   private flightVelocity: vec3 | null = null;
   private flightStartedAt: number = 0;
+  private armedAt: number = 0;
 
   public onSpellLaunched: Event<{ position: vec3; velocity: vec3 }> = new Event();
   public onSpellDespawned: Event<void> = new Event<void>();
@@ -76,7 +81,10 @@ export class SpellController extends BaseScriptComponent {
   }
 
   public arm(): void {
-    if (this.phase !== "idle") return;
+    if (this.phase !== "idle") {
+      this.logger.warn(`[ARM] Cannot arm — phase is "${this.phase}", expected "idle"`);
+      return;
+    }
     if (!this.spellPrefab || !this.handTransform || !this.headTransform) {
       this.logger.error("Missing prefab/hand/head reference");
       return;
@@ -91,6 +99,7 @@ export class SpellController extends BaseScriptComponent {
     );
     this.activeSpell.getTransform().setLocalPosition(localOffset);
     this.phase = "armed";
+    this.armedAt = getTime();
     this.logger.info(
       `[ARM] Spell armed at hand-local offset (R=${this.handOffsetRightCm},U=${this.handOffsetUpCm},F=${this.handOffsetForwardCm}). Pinch right hand to launch!`
     );
@@ -123,7 +132,24 @@ export class SpellController extends BaseScriptComponent {
   }
 
   private launchSpell(): void {
-    if (!this.activeSpell) return;
+    // Defensive: only launch from armed state (prevents stray pinches from re-launching a flying spell)
+    if (this.phase !== "armed") {
+      this.logger.info(`[LAUNCH] Pinch ignored — phase is "${this.phase}", not "armed"`);
+      return;
+    }
+    if (!this.activeSpell) {
+      this.logger.warn("[LAUNCH] Pinch ignored — phase says armed but activeSpell is null");
+      return;
+    }
+    // Cooldown guard: prevent instant-launch if a pinch fires the same frame the spell arms
+    // (common cause: player's hand was already pinching when grading finished)
+    const sinceArm = getTime() - this.armedAt;
+    if (sinceArm < this.launchCooldownSec) {
+      this.logger.info(
+        `[LAUNCH] Pinch ignored — too soon after arm (${sinceArm.toFixed(2)}s < ${this.launchCooldownSec}s cooldown). Spell stays armed.`
+      );
+      return;
+    }
     const spawnPos = this.activeSpell.getTransform().getWorldPosition();
     this.activeSpell.setParent(null);
     const dir = this.headTransform.getTransform().forward;

@@ -33,6 +33,7 @@
     handOffsetUpCm: false
     handTransform: false
     headTransform: false
+    launchCooldownSec: false
     spellLifetimeSec: false
     spellPrefab: false
     throwSpeedCmPerSec: false
@@ -55,6 +56,7 @@
       handOffsetForwardCm: !<float> 8.000000
       handOffsetUpCm: !<float> 0.000000
       handOffsetRightCm: !<float> 0.000000
+      launchCooldownSec: 0.500000
   ScriptTypes:
     -
       {}
@@ -71,3 +73,4 @@
     - '// @input float handOffsetForwardCm = 8 {"hint":"Forward offset from hand in local space (cm) — positive = away from palm"}'
     - '// @input float handOffsetUpCm {"hint":"Up offset from hand in local space (cm)"}'
     - '// @input float handOffsetRightCm {"hint":"Right offset from hand in local space (cm)"}'
+    - '// @input float launchCooldownSec = 0.5 {"hint":"Min seconds between arming and accepting a pinch — prevents accidental instant-launch"}'

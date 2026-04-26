@@ -3255,8 +3255,8 @@
   Enabled: true
   ScriptAsset: !<reference> 665a8178-60bd-4a3e-9fee-ec142200551f
   ScriptInputsDefault:
-    spellLifetimeSec: true
     handOffsetUpCm: true
+    launchCooldownSec: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -3266,11 +3266,12 @@
       headTransform: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
       throwSpeedCmPerSec: !<float> -500.000000
       gestureDetector: !<MappingBased.AssignableType> d61bfc62-6c24-4656-a8c2-b88bd35f1a82
-      spellLifetimeSec: !<float> 4.000000
+      spellLifetimeSec: !<float> 3.000000
       enableLogging: true
       handOffsetForwardCm: !<float> 10.000000
       handOffsetUpCm: !<float> 0.000000
       handOffsetRightCm: !<float> 5.000000
+      launchCooldownSec: 0.500000
   ScriptTypes:
     "":
       {}
