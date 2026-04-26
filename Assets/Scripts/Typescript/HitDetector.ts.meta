@@ -1,0 +1,73 @@
+- !<AssetImportMetadata/ca00fa1d-cce0-421d-98d1-e50830b7f034>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 5a0da66e-9156-4ded-89d1-89c32fcf588d
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 5a0da66e-9156-4ded-89d1-89c32fcf588d
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 20036b14-4991-47ae-8607-dad21172387e
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/20036b14-4991-47ae-8607-dad21172387e>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: bde5a644-1b05-4ea2-aca5-e8512f5ff4b7
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    headRadius: false
+    headTransform: false
+    healthSystem: false
+    multiplayerRoot: false
+    networkBridge: false
+    roundController: false
+    spellController: false
+    spellPrefab: false
+    spellRadius: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - spellController: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      headTransform: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      roundController: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      networkBridge: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      multiplayerRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      spellPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      healthSystem: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      headRadius: !<float> 18.000000
+      spellRadius: !<float> 6.000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">HitDetector – spell vs head sphere check</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input AssignableType spellController {"hint":"Spell source — auto-tracks any spell this controller launches"}'
+    - '// @input SceneObject headTransform {"hint":"Target head SceneObject (e.g. SoloOpponent.HeadProxy)"}'
+    - '// @input AssignableType_1 roundController {"hint":"Round controller — gets notifyOpponentDefeated() on hit"}'
+    - '// @input AssignableType_2 networkBridge {"hint":"NetworkBridge for receiving remote spell launches (multiplayer only)"}'
+    - '// @input SceneObject multiplayerRoot {"hint":"Container to instantiate remote spells (MultiplayerRoot)"}'
+    - '// @input Asset.ObjectPrefab spellPrefab {"hint":"Spell prefab for creating remote spell visuals"}'
+    - '// @input AssignableType_3 healthSystem {"hint":"Local player health system — takes damage when remote spell hits"}'
+    - '// @input float headRadius = 18 {"hint":"Hit radius around the head, in cm"}'
+    - '// @input float spellRadius = 6 {"hint":"Hit radius of the spell, in cm"}'
+    - // @input bool enableLogging

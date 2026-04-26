@@ -1,0 +1,73 @@
+- !<AssetImportMetadata/42ef2442-f6c9-4b8a-95ad-bf2eb1229ed4>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 665a8178-60bd-4a3e-9fee-ec142200551f
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 665a8178-60bd-4a3e-9fee-ec142200551f
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 8a551a98-0eb7-407f-bb4c-736db74a59a3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/8a551a98-0eb7-407f-bb4c-736db74a59a3>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: f50cccca-e9b5-4271-8666-fc63c52b7f5f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    gestureDetector: false
+    handOffsetForwardCm: false
+    handOffsetRightCm: false
+    handOffsetUpCm: false
+    handTransform: false
+    headTransform: false
+    spellLifetimeSec: false
+    spellPrefab: false
+    throwSpeedCmPerSec: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - spellPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      handTransform: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      headTransform: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      throwSpeedCmPerSec: !<float> -250.000000
+      gestureDetector: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      spellLifetimeSec: !<float> 4.000000
+      enableLogging: false
+      handOffsetForwardCm: !<float> 8.000000
+      handOffsetUpCm: !<float> 0.000000
+      handOffsetRightCm: !<float> 0.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SpellController – push-to-throw fireball</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input Asset.ObjectPrefab spellPrefab {"hint":"Prefab for the fireball visual (sphere + particles + collider)"}'
+    - '// @input SceneObject handTransform {"hint":"Hand SceneObject — fireball spawns here and tracks this until launch"}'
+    - '// @input SceneObject headTransform {"hint":"Head/camera SceneObject — its forward vector is the throw direction"}'
+    - "// @input float throwSpeedCmPerSec = 600 {\"hint\":\"Speed of the fireball in cm/sec along head's forward axis\"}"
+    - '// @input AssignableType gestureDetector {"hint":"Gesture detector component (PinchGestureDetector)"}'
+    - '// @input float spellLifetimeSec = 4 {"hint":"Seconds the fireball lives before auto-despawn if it misses"}'
+    - // @input bool enableLogging
+    - '// @input float handOffsetForwardCm = 8 {"hint":"Forward offset from hand in local space (cm) — positive = away from palm"}'
+    - '// @input float handOffsetUpCm {"hint":"Up offset from hand in local space (cm)"}'
+    - '// @input float handOffsetRightCm {"hint":"Right offset from hand in local space (cm)"}'

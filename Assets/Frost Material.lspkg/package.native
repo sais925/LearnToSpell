@@ -1,0 +1,37 @@
+- !<NativePackageDescriptor/4f5cf857-d0cd-4de9-bded-5551a0b3776a>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 15
+    patch: 0
+    build: 25101318
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: "Frost Material The Frost material makes your 3D object look like ice. This material is highly customizable, it comes with frost to ice ratio control, color, scale and fine tunings for icicles."
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 76
+  ExportUid: fce87816-6a7a-43a1-8184-50afba80895c
+  ComponentUid: c9e88464-1a89-4369-a06f-2bddbbb60973
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0

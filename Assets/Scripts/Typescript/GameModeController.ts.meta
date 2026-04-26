@@ -1,0 +1,64 @@
+- !<AssetImportMetadata/f2d0a326-0761-4b0b-ba45-98dfaa20a629>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> e19f7725-abf6-48dd-a49c-9e50912661f6
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> e19f7725-abf6-48dd-a49c-9e50912661f6
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 024df9aa-c86f-4f32-88cb-ab51611f0468
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/024df9aa-c86f-4f32-88cb-ab51611f0468>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 121485cd-cf71-4cfe-8548-65cf846fbbf7
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    modePromptText: false
+    multiplayerRoot: false
+    roundController: false
+    soloOpponent: false
+    soloRoot: false
+    voiceListener: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - voiceListener: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      modePromptText: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+      soloRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      multiplayerRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      roundController: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      soloOpponent: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GameModeController – voice-driven mode select</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - // @input AssignableType voiceListener
+    - '// @input Component.Text3D modePromptText {"hint":"Text 3D shown to the player while listening for solo/multiplayer choice"}'
+    - '// @input SceneObject soloRoot {"hint":"Scene root containing solo-mode objects (SoloOpponent + setup)"}'
+    - '// @input SceneObject multiplayerRoot {"hint":"Scene root containing multiplayer objects (Sync Kit + remote player)"}'
+    - '// @input AssignableType_1 roundController {"hint":"RoundController to start once a mode is selected"}'
+    - '// @input AssignableType_2 soloOpponent {"hint":"Solo opponent — only used in solo mode. Leave empty if not present."}'
+    - // @input bool enableLogging

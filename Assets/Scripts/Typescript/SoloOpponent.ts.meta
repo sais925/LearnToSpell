@@ -1,0 +1,61 @@
+- !<AssetImportMetadata/2891ed2a-4f2b-4a38-b9a9-8c6ee5bf52eb>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 04ed45ee-0790-4e78-9a93-6a41f305ba70
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 04ed45ee-0790-4e78-9a93-6a41f305ba70
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> cc1ba2f6-8587-4216-b2e6-42b2a2a9d568
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/cc1ba2f6-8587-4216-b2e6-42b2a2a9d568>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 06f8489e-57bd-4bd2-b3bd-25effc82eb84
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    pacingHalfWidthCm: false
+    periodSec: false
+    respawnRangeXCm: false
+    respawnRangeYCm: false
+    respawnRangeZCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - pacingHalfWidthCm: !<float> 50.000000
+      periodSec: !<float> 3.000000
+      respawnRangeXCm: !<float> 80.000000
+      respawnRangeYCm: !<float> 40.000000
+      respawnRangeZCm: !<float> 60.000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SoloOpponent – pacing target for solo mode</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input float pacingHalfWidthCm = 50 {"hint":"How far left/right of the start position to pace, in cm"}'
+    - '// @input float periodSec = 3 {"hint":"Pacing speed (full back-and-forth period in seconds)"}'
+    - '// @input float respawnRangeXCm = 80 {"hint":"Random respawn x range from original position (cm) — left/right spread"}'
+    - '// @input float respawnRangeYCm = 40 {"hint":"Random respawn y range from original position (cm) — up/down spread"}'
+    - '// @input float respawnRangeZCm = 60 {"hint":"Random respawn z range from original position (cm) — depth spread"}'
+    - // @input bool enableLogging

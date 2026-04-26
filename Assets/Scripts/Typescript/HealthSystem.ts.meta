@@ -1,0 +1,52 @@
+- !<AssetImportMetadata/689cea06-1769-47ab-958c-0673218aa86e>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 91060446-a683-4789-86a3-b13cb665d742
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 91060446-a683-4789-86a3-b13cb665d742
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 6e9b5587-f987-4158-bc76-29ab0b730f68
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/6e9b5587-f987-4158-bc76-29ab0b730f68>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 405923b1-efde-479b-a2d9-bee00779a074
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    healthText: false
+    maxHealth: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - maxHealth: !<float> 3.000000
+      healthText: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">HealthSystem – player health + death</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input float maxHealth = 1 {"hint":"Set to 1 for first-hit-wins (current spec). Bump to 3+ for the health-bar version later."}'
+    - '// @input Component.Text3D healthText {"hint":"Optional Text 3D component to render the current health value"}'
+    - // @input bool enableLogging

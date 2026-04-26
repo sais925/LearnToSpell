@@ -1,0 +1,46 @@
+- !<AssetImportMetadata/40b50ac2-e62c-4223-9107-2a489152a767>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b822c764-6f3d-485d-a021-22689d1b04fe
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b822c764-6f3d-485d-a021-22689d1b04fe
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> aa278d98-8d4a-4892-b09a-68f1650c3dc8
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/aa278d98-8d4a-4892-b09a-68f1650c3dc8>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 187afeb7-0f51-4180-9a3f-00df3aa97f3e
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">PinchGestureDetector – right-hand pinch</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - // @input bool enableLogging

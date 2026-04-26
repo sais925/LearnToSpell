@@ -1,0 +1,46 @@
+- !<AssetImportMetadata/ce68ec27-1db0-49b9-a314-4c624f70c8bd>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f91f0f26-95fb-4a35-9019-cb1f606c114c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f91f0f26-95fb-4a35-9019-cb1f606c114c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 333631c7-8e64-4975-aad4-b983b288d4a0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/333631c7-8e64-4975-aad4-b983b288d4a0>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: e5603405-dcd0-471c-b5db-13b551bc1e4f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">NetworkBridge – Sync Kit event glue</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - // @input bool enableLogging

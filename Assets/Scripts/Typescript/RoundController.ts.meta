@@ -1,0 +1,85 @@
+- !<AssetImportMetadata/7a9b5dd0-b2b4-406e-8da1-13cd1aa3b999>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 2bdbeb00-9360-48db-9f9e-3ae24106d059
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 2bdbeb00-9360-48db-9f9e-3ae24106d059
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> c717444f-4b13-4f5a-a3ce-b24b942f8a67
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/c717444f-4b13-4f5a-a3ce-b24b942f8a67>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 24880814-c70d-4854-a292-6c8c13d637e8
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cooldownSec: false
+    difficulty: false
+    enableLogging: false
+    feedbackText: false
+    fizzleDurationSec: false
+    fizzleVisual: false
+    hitsToWin: false
+    localHealth: false
+    networkBridge: false
+    promptText: false
+    soloOpponent: false
+    spellController: false
+    targetLanguage: false
+    voiceListener: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - voiceListener: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      spellController: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      localHealth: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      promptText: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+      feedbackText: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+      fizzleVisual: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      networkBridge: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      targetLanguage: Spanish
+      difficulty: easy
+      soloOpponent: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      cooldownSec: 1.500000
+      fizzleDurationSec: 1.200000
+      hitsToWin: !<float> 5.000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">RoundController – per-player round flow</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - // @input AssignableType voiceListener
+    - // @input AssignableType_1 spellController
+    - "// @input AssignableType_2 localHealth {\"hint\":\"Local player's health — decrements when remote spell hits us\"}"
+    - '// @input Component.Text3D promptText {"hint":"Text 3D component on the prompt book/page at the bottom of FOV"}'
+    - '// @input Component.Text3D feedbackText {"hint":"Text 3D component for fizzle/feedback messages"}'
+    - '// @input SceneObject fizzleVisual {"hint":"Optional fizzle visual SceneObject — enabled briefly on incorrect translation"}'
+    - '// @input AssignableType_3 networkBridge {"hint":"NetworkBridge for broadcasting spell launches (multiplayer only)"}'
+    - '// @input string targetLanguage = "Spanish" {"hint":"Target language the player must speak in"}'
+    - "// @input string difficulty = \"easy\" {\"hint\":\"Difficulty pulled from PromptBank — 'easy' | 'medium' | 'hard' or empty for any\"}"
+    - '// @input AssignableType_4 soloOpponent {"hint":"Solo opponent to disable on hit"}'
+    - '// @input float cooldownSec = 1.5 {"hint":"Seconds between rounds"}'
+    - '// @input float fizzleDurationSec = 1.2 {"hint":"Seconds the fizzle visual stays on after a wrong answer"}'
+    - '// @input float hitsToWin = 5 {"hint":"Number of target hits required to win the game"}'
+    - // @input bool enableLogging

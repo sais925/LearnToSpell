@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/6fa187d2-4876-4ffb-86a1-b7e378010c93>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c041c638-8175-44d0-8ae1-0d6353baf4aa
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c041c638-8175-44d0-8ae1-0d6353baf4aa
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 923c4f33-025d-4eab-a5c6-97996058a732
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/923c4f33-025d-4eab-a5c6-97996058a732>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 197aa1da-7396-4f1a-b8c4-fb3633712813
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableLogging: false
+    silenceTimeoutMs: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - silenceTimeoutMs: !<float> 1500.000000
+      enableLogging: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">VoiceListener – auto-trigger ASR</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @input float silenceTimeoutMs = 1500 {"hint":"Stop listening after this many ms of silence"}'
+    - // @input bool enableLogging

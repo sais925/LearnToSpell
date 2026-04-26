@@ -1,0 +1,56 @@
+- !<AssetImportMetadata/efece886-2726-4c51-b5ab-a0470f9a9b5e>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 3da78277-75ce-4ac6-b8fc-0deb42883eb1
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 3da78277-75ce-4ac6-b8fc-0deb42883eb1
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> c7c565dd-313e-4f65-907c-325d30aeff1d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<RenderMeshVisual/5fb08729-6a4b-473e-6936-739cd1092063>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> a2908d7b-3181-4290-9d88-d94d852ed1d1
+  Mesh: !<reference> f3cc8afc-cb20-4193-bb1a-39f896f0cd9a
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefabAssetData/c7c565dd-313e-4f65-907c-325d30aeff1d>
+  Prototype: !<ObjectOwner/e6c112c4-1cdf-4a74-9a17-649b92443674>
+    PackagePath: ""
+    objects:
+      - !<own> eb815855-bb66-4da8-42f6-88d938fc193d
+- !<SceneObject/eb815855-bb66-4da8-42f6-88d938fc193d>
+  PrefabRemaps:
+    []
+  Name: Fireball
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -50.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5fb08729-6a4b-473e-6936-739cd1092063
